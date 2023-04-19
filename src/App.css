@@ -1,0 +1,42 @@
+.App {
+    text-align: center;
+}
+
+.titulo-dinamico {
+    font-size: 3rem;
+}
+
+.productos-nav-bar {
+    margin: 0.6rem;
+}
+
+.productos-nav-bar h3 {
+    font-size: 2rem;
+}
+
+.productos-nav-bar button {
+    padding: 0.6rem 1rem;
+    font-size: 1.2rem;
+    margin: 0 1rem;
+    background-color: rgb(211, 146, 209);
+    border-radius: 16px;
+}
+
+.productos-nav-bar button:hover {
+    background-color: rgb(110, 67, 109);
+    color: wheat;
+}
+
+.img-cart-widget {
+    display: inline-flex;
+    padding: 0.8rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: orchid;
+    border-radius: 50%;
+}
+
+.img-cart-widget:hover {
+    background-color: rgb(110, 67, 109);
+    color: wheat;
+}
