@@ -1,13 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: CocoBikerUltralight;
+    src: url(LetraTitulo.ttf);
+}
+
+@font-face {
+    font-family: CocoMat-oscura;
+    src: url(Cocomat-oscurita.ttf);
+}
+
+@font-face {
+    font-family: CocoMat-normal;
+    src: url(Cocomat-normal.ttf);
+}
+
+body {
+    background-image: url(./dinamico-fondo.png);
+    background-size: 100%;
+    font-family: CocoMat-normal;
+}
+
 .App {
     text-align: center;
 }
 
 .titulo-dinamico {
-    font-size: 3rem;
+    display: inline-flex;
+    font-size: 5rem;
+    font-family: CocoBikerUltralight;
+    background-color: white;
+    width: 22rem;
+    justify-content: center;
+    border-radius: 5rem;
 }
 
 .productos-nav-bar {
     margin: 0.6rem;
+    font-family: CocoMat-Oscura;
 }
 
 .productos-nav-bar h3 {
@@ -28,15 +62,32 @@
 }
 
 .img-cart-widget {
+    justify-content: space-around;
+    align-items: center;
     display: inline-flex;
     padding: 0.8rem;
-    width: 2rem;
-    height: 2rem;
+    width: 5rem;
+    height: 3rem;
     background-color: orchid;
-    border-radius: 50%;
+    border-radius: 5rem;
+    font-family: CocoBikerUltralight;
+    font-size: 1.6rem;
+}
+.img-cart-widget p {
+    display: flex;
+    align-items: center;
 }
 
 .img-cart-widget:hover {
     background-color: rgb(110, 67, 109);
     color: wheat;
+}
+
+.Number {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ListGroup {
+    display: grid;
+    justify-content: center;
 }
