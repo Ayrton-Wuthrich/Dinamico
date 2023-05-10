@@ -40,18 +40,19 @@ body {
 }
 
 .productos-nav-bar {
-    margin: 0.6rem;
+    margin: 1rem;
     font-family: CocoMat-Oscura;
 }
 
 .productos-nav-bar h3 {
     font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
-.productos-nav-bar button {
+.buttonCat {
     padding: 0.6rem 1rem;
     font-size: 1.2rem;
-    margin: 0 1rem;
+    margin: 1rem 1rem;
     background-color: rgb(211, 146, 209);
     border-radius: 16px;
 }

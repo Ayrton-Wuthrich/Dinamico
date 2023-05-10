@@ -4,7 +4,7 @@ import joggersRosa from "./catalogo/joggers-rosa.png";
 
 const products = [
     {
-        id: '1',
+        id: "1",
         nombre: "Top negro deportivo",
         precio: 1000,
         categoria: "Tops",
@@ -43,7 +43,15 @@ export const getProducts = () => {
 export const getProductById = (productId) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            resolve(products.find(prod => prod.id === productId));
-        }, 500)
-    })
-}
+            resolve(products.find((prod) => prod.id === productId));
+        }, 500);
+    });
+};
+
+export const getProductsByCategoria = (productId) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(products.find((prod) => prod.id === productId));
+        }, 500);
+    });
+};

@@ -2,21 +2,26 @@ import "./App.css";
 import NavBar from "./Components/NavBar/index";
 import ItemListContainer from "./Components/ItemListContainer/index";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
-import ItemCount from "./Components/ItemCount/index";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
-                <NavBar></NavBar>
-                <ItemListContainer
-                    greeting={
-                        "Bienvenidas/os a la tienda de ropa deportiva para mujeres"
-                    }
-                />
-            </header>
-            <ItemDetailContainer />
-            <ItemCount />
+            <BrowserRouter>
+                <NavBar />
+                <Routes>
+                    <Route path="/" element={<ItemListContainer />} />
+                    <Route
+                        path="/categoria/:categoriaId"
+                        element={<ItemListContainer />}
+                    />
+                    <Route
+                        path="/item/:itemId"
+                        element={<ItemDetailContainer />}
+                    />
+                    <Route path="*" element={<h1>404 NOT FOUND</h1>} />
+                </Routes>
+            </BrowserRouter>
         </div>
     );
 }
