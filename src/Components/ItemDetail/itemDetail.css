@@ -1,0 +1,25 @@
+.CardItemID {
+    width: 50%;
+    border-radius: 6rem;
+    background-color: orchid;
+    margin: 1rem 0;
+    border: 0.1rem solid black;
+}
+
+.ItemHeaderID {
+    font-size: 2.5rem;
+}
+
+.ItemImgID {
+    max-width: 24rem;
+}
+
+.InfoID {
+    font-size: 1.6rem;
+    margin: 1.2rem;
+    font-family: fantasy;
+}
+
+.ItemFooterID {
+    margin-bottom: 1rem;
+}

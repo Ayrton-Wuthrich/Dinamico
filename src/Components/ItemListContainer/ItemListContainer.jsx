@@ -23,7 +23,7 @@ const ItemListContainer = ({ greeting }) => {
     }, [categoriaId]);
 
     return (
-        <div>
+        <div className="itemListCard">
             <h1>{greeting}</h1>
             <ItemList products={products} />
         </div>

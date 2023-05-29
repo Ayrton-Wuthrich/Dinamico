@@ -1,3 +1,4 @@
+import "./itemDetail.css";
 import ItemCount from "../ItemCount/index";
 
 const ItemDetail = ({
@@ -10,19 +11,19 @@ const ItemDetail = ({
     stock,
 }) => {
     return (
-        <article className="CardItem">
-            <header className="Header">
-                <h2 className="ItemHeader">{nombre}</h2>
+        <article className="CardItemID">
+            <header className="HeaderID">
+                <h2 className="ItemHeaderID">{nombre}</h2>
             </header>
             <picture>
-                <img src={img} alt={nombre} className="ItemImg" />
+                <img src={img} alt={nombre} className="ItemImgID" />
             </picture>
             <section>
-                <p className="Info">Categoria: {categoria}</p>
-                <p className="Info">Descripcion: {descripcion}</p>
-                <p className="Info">Precio: ${precio}</p>
+                <p className="InfoID">Categoria: {categoria}</p>
+                <p className="InfoID">Descripcion: {descripcion}</p>
+                <p className="InfoID">Precio: ${precio}</p>
             </section>
-            <footer className="ItemFooter">
+            <footer className="ItemFooterID">
                 <ItemCount
                     initial={1}
                     stock={stock}

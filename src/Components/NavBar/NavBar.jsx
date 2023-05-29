@@ -11,7 +11,7 @@ const NavBar = () => {
             <div className="productos-nav-bar">
                 <h3>Productos</h3>
                 <NavLink
-                    to={`/categoria/Top deportivos`}
+                    to={`/categoria/tops`}
                     className="buttonCat"
                     {...({ isActive }) =>
                         isActive ? "ActiveOpcion" : "Opcion"}
@@ -19,7 +19,7 @@ const NavBar = () => {
                     Top deportivos
                 </NavLink>
                 <NavLink
-                    to={`/categoria/Joggers`}
+                    to={`/categoria/joggers`}
                     className="buttonCat"
                     {...({ isActive }) =>
                         isActive ? "ActiveOpcion" : "Opcion"}
@@ -27,15 +27,15 @@ const NavBar = () => {
                     Joggers
                 </NavLink>
                 <NavLink
-                    to={`/categoria/Calzas`}
+                    to={`/categoria/calzas`}
                     className="buttonCat"
                     {...({ isActive }) =>
                         isActive ? "ActiveOpcion" : "Opcion"}
                 >
                     Calzas
                 </NavLink>
+                <CartWidget />
             </div>
-            <CartWidget />
         </nav>
     );
 };
