@@ -70,12 +70,14 @@ body {
     border-radius: 16px;
     text-decoration: none;
     align-items: center;
+    color: black;
 }
 
 .buttonCat:hover {
     background-color: orchid;
     font-family: fantasy;
     font-size: 1.4rem;
+    color: black;
 }
 
 .img-cart-widget {
@@ -107,13 +109,40 @@ body {
 }
 
 .ListGroup {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    flex-direction: column;
     justify-content: space-around;
     width: 70%;
-    margin: 0 15%;
+    margin: 0 18%;
 }
 
 .ItemDetailContainer {
     display: flex;
     justify-content: center;
+}
+
+.enviosDomicilio {
+    margin: 0;
+    background-color: black;
+    color: white;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    width: 100%;
+    font-size: 1rem;
+    padding: 8px;
+}
+
+.links {
+    display: flex;
+    background-color: rgb(211, 146, 209);
+    border-radius: 5rem;
+    padding: 1rem;
+    justify-content: space-around;
+}
+
+.linkExtra {
+    text-decoration: none;
+    color: black;
+    font-size: 1.2rem;
 }

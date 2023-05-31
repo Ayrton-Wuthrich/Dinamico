@@ -8,6 +8,18 @@ const NavBar = () => {
             <Link to="/">
                 <h2 className="titulo-dinamico">Dinamico</h2>
             </Link>
+            <div className="links">
+                <Link to="/" className="linkExtra">
+                    PRODUCTOS
+                </Link>
+                <Link to="/politica" className="linkExtra">
+                    POLÍTICA DE DEVOLUCIÓN
+                </Link>
+                <Link to="/contacto" className="linkExtra">
+                    CONTACTO
+                </Link>
+            </div>
+
             <div className="productos-nav-bar">
                 <h3>Productos</h3>
                 <NavLink

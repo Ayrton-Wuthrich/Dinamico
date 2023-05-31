@@ -23,3 +23,17 @@
 .ItemFooterID {
     margin-bottom: 1rem;
 }
+
+.botonComprar {
+    background-color: rgb(211, 146, 209);
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    padding: 0.5rem 1.2rem;
+    border: 1.5px solid black;
+}
+
+.botonComprar:active {
+    background-color: rgb(224, 204, 224);
+}
