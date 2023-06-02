@@ -10,23 +10,13 @@ const CartWidget = () => {
 
     return cart.length > 0 ? (
         <div>
-            <Link
-                to="/cart"
-                className="CartWidget img-cart-widget"
-                // style={{ display: totalQuantity > 0 ? "block" : "none" }}
-            >
+            <Link to="/cart" className="CartWidget img-cart-widget">
                 <img className="CartImg" src={carrito} alt="CartWidget" />
                 <span className="cantidad">{getQuantity()}</span>
-                {/* {totalQuantity} */}
             </Link>
         </div>
     ) : (
         <></>
-
-        // <div className="img-cart-widget">
-        //
-        //     <p>6</p>
-        // </div>
     );
 };
 

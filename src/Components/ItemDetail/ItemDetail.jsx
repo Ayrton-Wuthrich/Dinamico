@@ -25,6 +25,7 @@ const ItemDetail = ({
             id,
             nombre,
             precio,
+            img,
         };
 
         addItem(item, quantity);

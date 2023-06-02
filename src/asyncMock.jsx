@@ -30,7 +30,7 @@ const products = [
         categoria: "tops",
         img: topNegro,
         stock: 12,
-        descripcion: "Descripcion del top negro",
+        descripcion: "Descripcion del top color negro",
     },
     {
         id: "2",
@@ -39,7 +39,7 @@ const products = [
         categoria: "calzas",
         img: calzaLargaNegra,
         stock: 4,
-        descripcion: "Descripcion de la calza negra",
+        descripcion: "Descripcion de la calza color negro",
     },
     {
         id: "3",
@@ -48,7 +48,7 @@ const products = [
         categoria: "joggers",
         img: joggerRosa,
         stock: 7,
-        descripcion: "Descripcion del jogger rosa",
+        descripcion: "Descripcion del jogger color rosa",
     },
     {
         id: "4",
