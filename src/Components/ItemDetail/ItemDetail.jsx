@@ -6,138 +6,80 @@ import { CartContext } from "../../context/CartContext";
 import { collection, doc, getDoc } from "firebase/firestore";
 import { db } from "../../services/firebase/firebaseConfig";
 
-// console.log("db", db);
+const ItemDetail = () => {
+    const { id } = useParams();
 
-const ItemDetail = () =>
-    // id,
-    // nombre,
-    // img,
-    // categoria,
-    // descripcion,
-    // precio,
-    // stock,
-    {
-        let { id } = useParams();
+    const [quantityAdded, setQuantityAdded] = useState(0);
 
-        const [quantityAdded, setQuantityAdded] = useState(0);
+    const { addItem } = useContext(CartContext);
 
-        const { addItem } = useContext(CartContext);
+    const [descripcion, setDescripcion] = useState("");
 
-        const [productData, setProductData] = useState(null);
+    const [stock, setStock] = useState("");
 
-        useEffect(() => {
-            const fetchProductData = async () => {
-                try {
-                    const productDoc = doc(db, "products", id);
-                    const productSnapshot = await getDoc(productDoc);
-                    const productData = productSnapshot.data();
-                    console.log(
-                        "productData1",
-                        productData?.nombre,
-                        productData
-                    );
-                    setProductData(productData); // Establecer el estado utilizando setProductData
-                } catch (error) {
-                    console.error("Error al obtener el documento:", error);
-                }
-            };
+    const [precio, setPrecio] = useState("");
 
-            //     try {
-            //         console.log("itemid", itemId);
-            //         const productDoc = doc(db, "products", itemId);
+    const [nombre, setNombre] = useState("");
 
-            //         console.log("productDOC", productDoc);
+    const [categoria, setCategoria] = useState("");
 
-            //         const productSnapshot = await getDoc(productDoc);
-            //         // console.log("productSnapshot", productSnapshot);
-            //         const data = productSnapshot.data();
-            //         console.log("data", data);
-            //         if (productSnapshot.exists) {
-            //             console.log(
-            //                 "productSnapshot.exists",
-            //                 productSnapshot.exists
-            //             );
-            //             // console.log("productSnapshot.data()", data);
-            //             setProductData((prevProductData) => {
-            //                 return { ...prevProductData, ...data };
-            //             });
-            //         }
-            //         // if (productSnapshot.exists()) {
-            //         //     setProductData((prevProductData) => {
-            //         //         return {
-            //         //             ...prevProductData,
-            //         //             ...productSnapshot.data(),
-            //         //         };
-            //         //     });
-            //         // }
+    const [img, setImg] = useState("");
 
-            //         // if (productSnapshot.exists()) {
-            //         //     setProductData(productSnapshot.data());
-            //         // }
-            //     } catch (error) {
-            //         console.error(
-            //             "Error fetching product data from Firebase",
-            //             error
-            //         );
-            //     }
-            // };
-
-            fetchProductData();
-        }, [id]);
-        // console.log("productData2", productData);
-
-        // useEffect(() => {
-        //     console.log("productData", productData);
-        // }, [productData]);
-
-        // const handleOnAdd = (quantity) => {
-        //     setQuantityAdded(quantity);
-
-        //     const item = {
-        //         id,
-        //         nombre,
-        //         precio,
-        //         img,
-        //     };
-
-        //     addItem(item, quantity);
-        // };
-        return (
-            <article className="CardItemID">
-                <header className="HeaderID">
-                    <h2 className="ItemHeaderID">{productData?.nombre}</h2>
-                </header>
-                <picture>
-                    <img
-                        src={productData?.img}
-                        alt={productData?.nombre}
-                        className="ItemImgID"
-                    />
-                </picture>
-                <section>
-                    <p className="InfoID">
-                        Categoria: {productData?.categoria}
-                    </p>
-                    <p className="InfoID">
-                        Descripcion: {productData?.descripcion}
-                    </p>
-                    <p className="InfoID">Precio: ${productData?.precio}</p>
-                </section>
-                <footer className="ItemFooterID">
-                    {quantityAdded > 0 ? (
-                        <Link to="/cart" className="Opcion botonComprar">
-                            Terminar compra
-                        </Link>
-                    ) : (
-                        <ItemCount
-                            initial={1}
-                            stock={productData?.stock}
-                            onAdd="0"
-                        />
-                    )}
-                </footer>
-            </article>
-        );
+    const fetchProductData = async (id) => {
+        const product = await getDoc(doc(db, "products", id));
+        if (product.exists()) {
+            setDescripcion(product.data().descripcion);
+            setStock(product.data().stock);
+            setPrecio(product.data().precio);
+            setNombre(product.data().nombre);
+            setCategoria(product.data().categoria);
+            setImg(product.data().img);
+        } else {
+            console.log("El producto no existe");
+        }
     };
+
+    useEffect(() => {
+        fetchProductData(id);
+    }, []);
+    console.log(id);
+
+    const handleOnAdd = (quantity) => {
+        setQuantityAdded(quantity);
+
+        const item = {
+            id,
+            nombre,
+            precio,
+            img,
+        };
+
+        addItem(item, quantity);
+    };
+    return (
+        <article className="CardItemID">
+            <header className="HeaderID">
+                <h2 className="ItemHeaderID">{nombre}</h2>
+            </header>
+            <picture>
+                <img src={img} alt={nombre} className="ItemImgID" />
+            </picture>
+            <section>
+                <p className="InfoID">Categoria: {categoria}</p>
+                <p className="InfoID">Descripcion: {descripcion}</p>
+                <p className="InfoID">Precio: ${precio}</p>
+            </section>
+            <footer className="ItemFooterID">
+                {quantityAdded > 0 ? (
+                    <Link to="/cart" className="Opcion botonComprar">
+                        Terminar compra
+                    </Link>
+                ) : (
+                    <ItemCount initial={1} stock={stock} onAdd={handleOnAdd} />
+                )}
+            </footer>
+        </article>
+    );
+};
 
 export default ItemDetail;

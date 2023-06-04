@@ -15,12 +15,12 @@ const ItemDetailContainer = () => {
 
     const [loading, setLoading] = useState(true);
 
-    const { itemId } = useParams();
+    const { id } = useParams();
 
     useEffect(() => {
         setLoading(true);
 
-        const docRef = doc(db, "products", itemId);
+        const docRef = doc(db, "products", id);
 
         getDoc(docRef)
             .then((response) => {
@@ -34,7 +34,7 @@ const ItemDetailContainer = () => {
             .finally(() => {
                 setLoading(false);
             });
-    }, [itemId]);
+    }, [id]);
 
     return (
         <div className="ItemDetailContainer">

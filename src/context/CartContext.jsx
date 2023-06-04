@@ -59,3 +59,5 @@ export const CartProvider = ({ defaultValue = [], children }) => {
         </CartContext.Provider>
     );
 };
+
+export default CartContext;

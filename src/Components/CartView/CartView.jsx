@@ -40,9 +40,11 @@ const CartView = () => {
                         {getTotal()}
                     </span>
                 </h4>
-                <button className="carrito-total-comprar">
-                    Confirmar compra
-                </button>
+                <Link to="/checkout">
+                    <button className="carrito-total-comprar">
+                        Confirmar compra
+                    </button>
+                </Link>
             </div>
         </div>
     ) : (
